@@ -1,0 +1,8 @@
+random_seed: 42
+
+data:
+  raw_path: data/H2.csv
+
+paths:
+  artifacts: artifacts
+  outputs: outputs
