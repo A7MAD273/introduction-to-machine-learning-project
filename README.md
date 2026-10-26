@@ -6,10 +6,12 @@ CSE382 – Introduction to Machine Learning, end-to-end project using the City H
 
 | Name | Student ID | GitHub username |
 |------|------------|-----------------|
-|      |            |                 |
-|      |            |                 |
-|      |            |                 |
-|      |            |                 |
+|Ahmed khaled mohamed abdullfatah elraiany     |23p0364            |                 |
+|Tervina Samir Bishay Fahem     |23p0363            |                 |
+|Omar kashef ibrahim said labeb     |            |                 |
+|Mohamed Ashraf salem Handok      |23p0377            |                 |
+|Mahmoud Adel Kamal Essa      |23p0421            |                 |
+|Juliana Hany Saad El Deen Waheeb      |23p0267            |                 |
 
 ## Repository
 
