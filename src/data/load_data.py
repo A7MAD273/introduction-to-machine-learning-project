@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd                      
 
-DATA_PATH = "data/H2.csv"
+from pathlib import Path
+DATA_PATH = Path(__file__).resolve().parents[2] / "data" / "H2.csv"
 EXPECTED_SHAPE = (79330, 31)
 
 
