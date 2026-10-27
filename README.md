@@ -11,7 +11,7 @@ CSE382 – Introduction to Machine Learning, end-to-end project using the City H
 |Omar kashef ibrahim said labeb     |23P0298            |                 |
 |Mohamed Ashraf salem Handok      |23p0377            |                 |
 |Mahmoud Adel Kamal Essa      |23p0421            |                 |
-|Juliana Hany Saad El Deen Waheeb      |23p0267            |                 |
+|Juliana Hany Saad El Deen Waheeb      |23p0267            |julianasaad77-cyber                 |
 
 ## Repository
 
