@@ -25,5 +25,7 @@ def load_raw_data(path=DATA_PATH):
 if __name__ == "__main__":
     df = load_raw_data()
     print(df.shape)
+    pd.set_option("display.max_columns", None)
     print(df.head())
     print("Missing Agent:", df["Agent"].isna().sum())
+    
