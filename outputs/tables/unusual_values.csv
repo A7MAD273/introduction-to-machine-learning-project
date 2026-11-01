@@ -1,0 +1,14 @@
+check,rows,percent
+ADR == 0,1208,1.52
+ADR < 0,0,0.0
+ADR > 1000,1,0.0
+Adults == 0,390,0.49
+Total guests == 0,167,0.21
+Total nights == 0,331,0.42
+Total nights > 30,7,0.01
+LeadTime > 365,2704,3.41
+Babies > 0 and Adults == 0,3,0.0
+Children missing,4,0.01
+DaysInWaitingList > 0,3443,4.34
+BookingChanges > 5,85,0.11
+RequiredCarParkingSpaces > 2,2,0.0
