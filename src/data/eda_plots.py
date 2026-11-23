@@ -1,13 +1,13 @@
 """
-EDA for the first feature (column) of a CSV.
+EDA plots for every column of H2.csv.
 
-Usage:
-    python eda_first_feature.py H2.csv            # first column
-    python eda_first_feature.py H2.csv LeadTime   # any column by name
-    python eda_first_feature.py H2.csv --out eda_output
+Run from the project root:
+    python -m src.data.eda_plots
+
+Saves the figures to outputs/figures/.
 """
-import argparse
 import os
+from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")  # works without a display; remove to show plots interactively
@@ -16,7 +16,11 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
+from src.data.load_data import load_raw_data
+
 sns.set_theme(style="whitegrid")
+
+FIGURES_DIR = Path(__file__).resolve().parents[2] / "outputs" / "figures"
 
 
 def is_discrete(s: pd.Series, max_unique: int = 15) -> bool:
@@ -36,6 +40,7 @@ def overview(s: pd.Series) -> None:
 
 
 def analyze_categorical(s: pd.Series, out: str) -> None:
+    s = s.astype(object).fillna("Missing")  # show missing values as their own bar
     counts = s.value_counts(dropna=False)
     pct = s.value_counts(normalize=True, dropna=False).mul(100).round(2)
     table = pd.DataFrame({"count": counts, "percent": pct})
@@ -128,41 +133,25 @@ def relationship_to_other_features(df: pd.DataFrame, col: str, out: str, top_n: 
     print(f"Saved plot -> {path}")
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="EDA for one feature of a CSV")
-    parser.add_argument("csv")
-    parser.add_argument("column", nargs="?", help="column name (default: first column)")
-    parser.add_argument("--out", default="eda_output", help="folder for saved plots")
-    args = parser.parse_args()
-
-    os.makedirs(args.out, exist_ok=True)
-    df = pd.read_csv(args.csv)
-    col = args.column or df.columns[0]
-    if col not in df.columns:
-        raise SystemExit(f"Column '{col}' not found. Available: {list(df.columns)}")
-
+def make_all_plots(df: pd.DataFrame, out: str = str(FIGURES_DIR)) -> None:
+    """Run the EDA for every column and save the figures in `out`."""
+    os.makedirs(out, exist_ok=True)
     print(f"Dataset shape: {df.shape[0]:,} rows x {df.shape[1]} columns")
-    s = df[col]
-    overview(s)
 
-    if is_discrete(s):
-        analyze_categorical(s, args.out)
-    else:
-        analyze_numeric(s, args.out)
+    for col in df.columns:
+        s = df[col]
+        overview(s)
 
-    relationship_to_other_features(df, col, args.out)
+        if is_discrete(s):
+            analyze_categorical(s, out)
+        else:
+            analyze_numeric(s, out)
+
+        relationship_to_other_features(df, col, out)
 
 
-    s = df["IsCanceled"]
-
-    for value in s.unique():
-        rows = s.index[s == value]
-        print(f"Value {value}: {len(rows):,} rows")
-        print(list(rows[:20]), "...")   # first 20 only
-
-    # save every row index to files
-    for value in s.unique():
-        df[s == value].to_csv(f"IsCanceled_{value}_rows.csv")   # keeps original index
+def main() -> None:
+    make_all_plots(load_raw_data())
 
 
 if __name__ == "__main__":
