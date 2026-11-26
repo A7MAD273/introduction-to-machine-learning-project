@@ -2,7 +2,7 @@
 
 CSE382 – Introduction to Machine Learning, end-to-end project using the City Hotel (H2) dataset.
 
-## Team
+## Team 
 
 | Name | Student ID | GitHub username |
 |------|------------|-----------------|
