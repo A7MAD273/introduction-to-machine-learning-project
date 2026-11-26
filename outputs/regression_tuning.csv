@@ -1,0 +1,4 @@
+model,baseline_cv_mae,tuned_cv_mae,tuned_cv_rmse,tuned_cv_r2,tuned_fit_time_sec,search_time_sec
+Ridge,15.955,15.873,22.395,0.681,0.137,10.631
+RandomForest,10.787,10.831,17.797,0.799,1.533,93.483
+XGBoost,11.22,9.815,16.171,0.834,1.611,64.397

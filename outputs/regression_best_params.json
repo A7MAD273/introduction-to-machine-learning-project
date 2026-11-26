@@ -1,0 +1,20 @@
+{
+  "Ridge": {
+    "alpha": 0.012087541473056965
+  },
+  "RandomForest": {
+    "max_depth": 30,
+    "max_features": 1.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 4,
+    "n_estimators": 154
+  },
+  "XGBoost": {
+    "colsample_bytree": 0.8329611783087483,
+    "learning_rate": 0.09918594953102818,
+    "max_depth": 8,
+    "min_child_weight": 3,
+    "n_estimators": 648,
+    "subsample": 0.7531707499015159
+  }
+}
