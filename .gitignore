@@ -22,3 +22,6 @@ artifacts/*
 .idea/
 .DS_Store
 Thumbs.db
+
+# trained models / fitted pipelines (regenerate with the commands in README)
+artifacts/*.joblib

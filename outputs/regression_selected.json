@@ -1,0 +1,14 @@
+{
+  "selected_model": "XGBoost",
+  "criterion": "lowest tuned 3-fold CV MAE on the training set",
+  "tuned_cv_mae": 9.815,
+  "artifact": "artifacts\\regression_xgboost.joblib",
+  "best_params": {
+    "colsample_bytree": 0.8329611783087483,
+    "learning_rate": 0.09918594953102818,
+    "max_depth": 8,
+    "min_child_weight": 3,
+    "n_estimators": 648,
+    "subsample": 0.7531707499015159
+  }
+}

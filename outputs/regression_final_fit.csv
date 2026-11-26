@@ -1,0 +1,4 @@
+model,train_time_sec,file,size_mb
+Ridge,0.211,artifacts\regression_ridge.joblib,0.004
+RandomForest,2.55,artifacts\regression_random_forest.joblib,66.261
+XGBoost,2.229,artifacts\regression_xgboost.joblib,2.653
