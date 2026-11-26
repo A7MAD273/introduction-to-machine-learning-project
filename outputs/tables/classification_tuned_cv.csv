@@ -1,0 +1,4 @@
+model,config,accuracy,precision,recall,f1,roc_auc,pr_auc,best_params,time_sec
+logistic_regression,tuned,0.6559,0.4584,0.768,0.5742,0.7446,0.5742,"{'C': 0.1, 'class_weight': 'balanced'}",23.8366
+random_forest,tuned,0.7023,0.5048,0.773,0.6107,0.7884,0.6345,"{'class_weight': 'balanced', 'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'n_estimators': 300}",784.0859
+xgboost,tuned,0.7046,0.5074,0.7547,0.6068,0.7849,0.6327,"{'learning_rate': 0.05, 'max_depth': 6, 'n_estimators': 600, 'scale_pos_weight': 2.3, 'subsample': 1.0}",190.7662

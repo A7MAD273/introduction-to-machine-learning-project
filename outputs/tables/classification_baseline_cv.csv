@@ -1,0 +1,4 @@
+model,config,accuracy,precision,recall,f1,roc_auc,pr_auc,time_sec
+logistic_regression,baseline,0.7328,0.6643,0.234,0.3458,0.7428,0.5707,3.4525
+random_forest,baseline,0.7415,0.597,0.4437,0.509,0.7698,0.6074,7.698
+xgboost,baseline,0.7463,0.6325,0.3823,0.4765,0.7801,0.6268,5.4884
